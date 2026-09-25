@@ -1,0 +1,15 @@
+bin/
+obj/
+.vs/
+Logs/
+*.user
+appsettings.Local.json
+
+# Standard .NET extras
+*.suo
+*.userosscache
+*.sln.docstates
+[Dd]ebug/
+[Rr]elease/
+publish/
+*.nupkg

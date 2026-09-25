@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ECommerce.Infrastructure</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- MongoDB driver replaces Npgsql + EF Core as the persistence provider. -->
+    <PackageReference Include="MongoDB.Driver" Version="3.1.0" />
+    <!-- Microsoft.AspNetCore.Identity.EntityFrameworkCore is gone: ASP.NET Identity's storage is now
+         provided by the hand-written Mongo stores in Infrastructure/Auth/Identity, since there is no
+         official Microsoft-maintained Mongo identity store. Core Identity (UserManager/RoleManager,
+         password hashing, token providers) still comes from Microsoft.AspNetCore.Identity, which ships
+         as part of the ASP.NET Core shared framework already referenced via <FrameworkReference> above. -->
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.2.1" />
+    <PackageReference Include="Google.Apis.Auth" Version="1.68.0" />
+    <PackageReference Include="Stripe.net" Version="47.4.0" />
+    <PackageReference Include="CloudinaryDotNet" Version="1.26.2" />
+    <PackageReference Include="Serilog" Version="4.1.0" />
+  </ItemGroup>
+
+</Project>
